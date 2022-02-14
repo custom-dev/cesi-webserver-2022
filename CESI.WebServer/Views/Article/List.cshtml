@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CESI.WebServer.Models.ArticleModel>
+
+@{
+    ViewData["Title"] = "ListView";
+}
+
+<h1>ListView</h1>
+
+<div class="alert alert-info">
+    <p>@ViewBag.Citation.Contenu</p>
+    <i><small>(@ViewBag.Citation.Auteur)</small></i>
+</div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.URL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NbLike)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titre)
+            </td>
+            <td>
+                <a href="@item.URL" target="_blank">@item.URL</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbLike)
+            </td>
+            <td>
+                @Html.ActionLink("Vote", "Vote", new { id=item.ID }) |
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
