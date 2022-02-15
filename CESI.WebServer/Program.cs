@@ -1,4 +1,5 @@
 using CESI.NoyauFonctionnel;
+using CESI.NoyauFonctionnel.Database;
 using CESI.NoyauFonctionnel.Sqlite;
 using Microsoft.Extensions.Options;
 
@@ -9,10 +10,11 @@ public class WebServer
 		var builder = WebApplication.CreateBuilder(args);
 
 		// Add services to the container.
-		builder.Services.Configure<KernelConfig>(builder.Configuration.GetSection("Kernel"));
+		builder.Services.Configure<SQLiteKernelConfig>(builder.Configuration.GetSection("KernelSQLite"));
 
 		builder.Services.AddControllersWithViews();
-		builder.Services.AddSingleton<KernelConfig>(x => x.GetService<IOptions<KernelConfig>>().Value);
+		builder.Services.AddSingleton<SQLiteKernelConfig>(x => x.GetService<IOptions<SQLiteKernelConfig>>().Value);
+		builder.Services.AddSingleton<IConnectionFactory, SQLiteConnectionFactory>();
 		builder.Services.AddSingleton<IKernel, KernelImpl>();
 		builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 

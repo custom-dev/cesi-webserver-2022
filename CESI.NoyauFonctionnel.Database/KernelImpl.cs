@@ -1,17 +1,17 @@
 ﻿
-using System.Data.SQLite;
 
-namespace CESI.NoyauFonctionnel.Sqlite
+using System.Data;
+
+namespace CESI.NoyauFonctionnel.Database
 {
 	public class KernelImpl : IKernel, IDisposable
 	{
-		private KernelConfig _config;
-		private SQLiteConnection _connection;
+		private IDbConnection _connection;
 
-		public KernelImpl(KernelConfig config)
+		public KernelImpl(IConnectionFactory factory)
 		{
-			_config = config;
-			_connection = new SQLiteConnection($"Data Source={config.SqlDbPath}");
+			//_connection = new SQLiteConnection($"Data Source={config.SqlDbPath}");
+			_connection = factory.NewConnection();
 			_connection.Open();
 		}
 

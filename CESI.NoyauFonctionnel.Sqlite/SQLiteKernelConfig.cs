@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CESI.NoyauFonctionnel.Sqlite
 {
-	public class KernelConfig
+	public class SQLiteKernelConfig
 	{
 		/// <summary>
 		/// Chemin vers la base de données SQLite

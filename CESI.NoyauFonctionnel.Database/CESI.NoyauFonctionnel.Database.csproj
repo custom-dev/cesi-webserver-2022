@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SQLite" Version="1.0.115.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CESI.NoyauFonctionnel.Database\CESI.NoyauFonctionnel.Database.csproj" />
+    <ProjectReference Include="..\CESI.NoyauFonctionnel\CESI.NoyauFonctionnel.csproj" />
   </ItemGroup>
 
 </Project>
