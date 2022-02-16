@@ -8,6 +8,18 @@
 
 <h4>ArticleModel</h4>
 <hr />
+
+@if (ViewBag.Errors != null && ViewBag.Errors.Length > 0)
+{
+    <div class="alert alert-danger">Aie aie aie, ça ne va pas...
+        <ul>
+            @foreach(string message in ViewBag.Errors)
+            {
+                <li>@message</li>
+            }
+        </ul>
+    </div>
+}
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">

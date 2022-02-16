@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CESI.NoyauFonctionnel.Sqlit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CESI.NoyauFonctionnel.Database", "CESI.NoyauFonctionnel.Database\CESI.NoyauFonctionnel.Database.csproj", "{5EAC0D51-6B71-40E5-8401-C2D03C94A003}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CESI.NoyauFonctionnel.MySQL", "CESI.NoyauFonctionnel.MySQL\CESI.NoyauFonctionnel.MySQL.csproj", "{BF586DA1-46E4-4301-9D40-E9F4789C6CD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5EAC0D51-6B71-40E5-8401-C2D03C94A003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EAC0D51-6B71-40E5-8401-C2D03C94A003}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EAC0D51-6B71-40E5-8401-C2D03C94A003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF586DA1-46E4-4301-9D40-E9F4789C6CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF586DA1-46E4-4301-9D40-E9F4789C6CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF586DA1-46E4-4301-9D40-E9F4789C6CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF586DA1-46E4-4301-9D40-E9F4789C6CD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

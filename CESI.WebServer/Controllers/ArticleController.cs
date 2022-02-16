@@ -49,7 +49,7 @@ namespace CESI.WebServer.Controllers
 
 		[HttpGet]
 		public IActionResult Edit(int id)
-		{
+		{			
 			IArticle article = _kernel.GetArticle(id);
 			ArticleModel model = new ArticleModel(article);
 			return View(model);
@@ -67,9 +67,17 @@ namespace CESI.WebServer.Controllers
 		[ValidateAntiForgeryToken]
 		public IActionResult Edit(int id, [Bind()] ArticleModel model)
 		{
-			IArticle article = _kernel.GetArticle(id);
-			article.Update(model.Titre, model.URL, model.Resume);
-			return RedirectToAction("List");
+			if (!this.ModelState.IsValid)
+			{
+				ViewBag.Errors = this.ModelState.Keys.SelectMany(x => this.ModelState[x].Errors).Select(x => x.ErrorMessage).ToArray();
+				return View(model);
+			}
+			else
+			{
+				IArticle article = _kernel.GetArticle(id);
+				article.Update(model.Titre, model.URL, model.Resume);
+				return RedirectToAction("List");
+			}
 		}
 
 		[HttpGet]
