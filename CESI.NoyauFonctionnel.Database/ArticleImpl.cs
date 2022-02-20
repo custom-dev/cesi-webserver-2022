@@ -67,6 +67,8 @@ namespace CESI.NoyauFonctionnel.Database
 
 				cmd.CommandText = $"INSERT INTO article({COL_Titre}, {COL_Url}, {COL_Resume}, {COL_Resume}) VALUES (@titre, @url, @resume, 0);";
 
+				//IDbCommandExtension.AddParameterWithValue(cmd, "@Titre", titre);
+
 				cmd.AddParameterWithValue("@Titre", titre)
 				   .AddParameterWithValue("@url", url)
 				   .AddParameterWithValue("@Resume", resume);
@@ -147,7 +149,7 @@ namespace CESI.NoyauFonctionnel.Database
 				cmd.AddParameterWithValue("@ID", articleID)
 				   .AddParameterWithValue("@Titre", titre)
 				   .AddParameterWithValue("@Url", url)
-				   .AddParameterWithValue("Resume", resume);
+				   .AddParameterWithValue("@Resume", resume);
 
 				cmd.ExecuteNonQuery();								
 			}
